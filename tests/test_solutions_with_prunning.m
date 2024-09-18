@@ -28,7 +28,7 @@ res = zeros((length(G)), length(R), 2);
 for threshold = 1:(length(G))
     for i = 1:length(R)
         r = R(i);
-        [A, b, idxs_dict] = generateA2(G, r, threshold);
+        [A, b, idxs_dict] = generateA(G, r, threshold);
         x = mldivide(A, b);
 
         u = idxs_dict('10000000');
