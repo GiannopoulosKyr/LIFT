@@ -33,13 +33,13 @@ function [res] = test(graphs, R)
         for j=1:length(R)
             r = R(j);
 
-            [A, d, reprs] = generateA3(G, r, 0, 1);
+            [A, d, reprs] = generateA(G, r, 0, 1);
             g = mldivide(A, d);
 
             % Truncation level k
             for k=1:(n-1)
-                [P1, d1, inv_reprs1, reprs1] = generateA3(G, r, k, 1);
-                [P2, d2, inv_reprs2, reprs2] = generateA3(G, r, k+1, 1);
+                [P1, d1, inv_reprs1, reprs1] = generateA(G, r, k, 1);
+                [P2, d2, inv_reprs2, reprs2] = generateA(G, r, k+1, 1);
 
                 g1 = mldivide(P1, d1);
                 S = size(P1,1);
