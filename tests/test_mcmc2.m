@@ -27,14 +27,14 @@ for n = 2:n_max
 
     % Test 1: Simple solution
     fprintf("Simple solution: ");
-    [A, b] = generateA2(G, r);
+    [A, b] = generateA(G, r);
     x = mldivide(A, b);
     disp("Done")
 
     % Test 2: Simple solution with thresholds
     for t = 1:(length(G)-1)
         fprintf("Simple solution with threshold=%d: ", t)
-        [A, b] = generateA2(G, r, t);
+        [A, b] = generateA(G, r, t);
         x = mldivide(A, b);
         disp("Done")
     end
